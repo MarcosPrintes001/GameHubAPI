@@ -1,0 +1,46 @@
+# Binários e pastas de build geradas pelo compilador
+bin/
+obj/
+
+# Configurações de usuário locais e cache do Visual Studio/IDE
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Configurações de IDE JetBrains Rider (se você usar)
+.idea/
+_ReSharper*/
+_ReSharper.Caches/
+
+# Logs, arquivos temporários e cache do sistema
+*.log
+*.vs/
+*.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Configurações de publicação e deploy
+*.Publish.xml
+*.pubxml
+*.pubxml.user
+
+# Banco de dados local (SQLite) e arquivos gerados por ele
+*.db
+*.sqlite
+*.sqlite3
+
+# Arquivos de configuração sensíveis (configurações locais)
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# Pacotes NuGet e cache do gerenciador de pacotes
+*.nupkg
+.nuget/
+
+# Diretórios node_modules, se usar frontend (React, Vue etc)
+node_modules/
+
