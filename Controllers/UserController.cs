@@ -30,12 +30,18 @@ public class UserController : ControllerBase
         if (await _context.Users.AnyAsync(u => u.Username == dto.Username))
             return BadRequest("Username já está em uso.");
 
+        if (string.IsNullOrEmpty(dto.Password))
+            return BadRequest("Senha não pode ser nula ou vazia.");
+
         _authService.CreatePasswordHash(dto.Password, out byte[] passwordHash, out byte[] passwordSalt);
+
+        if (string.IsNullOrEmpty(dto.Username))
+            return BadRequest("Username não pode ser nulo ou vazio.");
 
         var user = new User
         {
             Username = dto.Username,
-            Email = dto.Email,
+            Email = dto.Email ?? string.Empty,
             PasswordHash = passwordHash,
             PasswordSalt = passwordSalt
         };
